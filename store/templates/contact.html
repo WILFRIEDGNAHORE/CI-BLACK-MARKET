@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Contactez nous</h1>
+            <p class="lead fw-normal text-white-50 mb-0">ICI...</p>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="mb-8">
+        <!-- heading -->
+        <h1 class="h3">Demandes des détaillants</h1>
+        <p class="lead mb-0">Ce formulaire est réservé aux demandes des détaillants. </p>
+     </div>
+    <!-- Contact Form -->
+    <div class="col-12 col-md-8">
+        <div class="contact-form">
+          <!-- Section Heading -->
+          <div class="section-heading">
+            <h2>Entrer en contact</h2>
+            <div class="line"></div>
+          </div>
+          <!-- Form -->
+          <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
+                <br/><br/>
+              </div>
+              <div class="col-lg-6">
+                <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
+              </div>
+              <div class="col-12">
+                <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
+                <br/><br/>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </div>
+          </form>
+
+</section>
+<br/><br/><br/>
+{% endblock %}

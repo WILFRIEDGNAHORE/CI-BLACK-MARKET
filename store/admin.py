@@ -1,9 +1,9 @@
 from django.contrib import admin
 from .models import Category, Customer, Product, Order, Profile
 from django.contrib.auth.models import User
-from .models import Vendor
 
-admin.site.register(Vendor)
+
+
 admin.site.register(Category)
 admin.site.register(Customer)
 admin.site.register(Product)

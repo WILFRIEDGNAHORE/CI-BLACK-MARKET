@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, SetPasswordForm
 from django import forms
 from .models import Profile
+from django.core.validators  import EmailValidator
 
 
 class UserInfoForm(forms.ModelForm):
@@ -84,3 +85,11 @@ class SignUpForm(UserCreationForm):
 		self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
 		self.fields['password2'].label = ''
 		self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'
+
+
+class ContactForm(forms.Form):
+    nom = forms.CharField(max_length=100)
+    email = forms.EmailField(validators=[EmailValidator()])
+    sujet = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+	
