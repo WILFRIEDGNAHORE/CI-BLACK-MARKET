@@ -12,6 +12,7 @@
             </div>
         </header>
         
+        
         <!-- Section-->
         <section class="py-5">
             <div class="container">
@@ -40,9 +41,9 @@
                               
                             </div>
                             <div class="text-small mb-1">
-                              <a href="#!" class="text-decoration-none text-muted">{{ product.name }}</a>
+                              <a href="{% url 'product' product.id  %}" class="text-decoration-none text-muted">{{ product.category }}</a>
                             </div>
-                            <h2 class="fs-6"><a href="./pages/shop-single.html" class="text-inherit text-decoration-none">Haldiram's Sev Bhujia</a></h2>
+                            <h2 class="fs-6"><a href="{% url 'product' product.id  %}" class="text-inherit text-decoration-none">{{ product.name }}</a></h2>
                             <div>
                               <small class="text-warning">
                                 <i class="bi bi-star-fill"></i>
@@ -82,9 +83,9 @@
                               
                             </div>
                             <div class="text-small mb-1">
-                              <a href="#!" class="text-decoration-none text-muted">{{ product.name }}</a>
+                              <a href="{% url 'product' product.id  %}" class="text-decoration-none text-muted">{{ product.category }}</a>
                             </div>
-                            <h2 class="fs-6"><a href="./pages/shop-single.html" class="text-inherit text-decoration-none">Haldiram's Sev Bhujia</a></h2>
+                            <h2 class="fs-6"><a href="{% url 'product' product.id  %}" class="text-inherit text-decoration-none">{{ product.name }}</a></h2>
                             <div>
                               <small class="text-warning">
                                 <i class="bi bi-star-fill"></i>
@@ -118,6 +119,7 @@
                     {% endfor %}
                 </div>
             </div>
+            
         </section>
 
 {% endblock %}

@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+
 from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
 
 from payment.forms import ShippingForm
@@ -186,7 +187,7 @@ def login_user(request):
 def logout_user(request):
 	logout(request)
 	messages.success(request, ("You have been logged out...Thanks for stopping by..."))
-	return redirect('home')
+	return redirect('login')
 
 
 

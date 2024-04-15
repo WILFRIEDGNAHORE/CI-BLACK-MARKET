@@ -92,4 +92,13 @@ class ContactForm(forms.Form):
     email = forms.EmailField(validators=[EmailValidator()])
     sujet = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
+
+class PasswordResetForm(forms.Form):
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Entrez votre adresse email'}))
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise forms.ValidationError('Veuillez entrer une adresse email.')
+        return email
 	

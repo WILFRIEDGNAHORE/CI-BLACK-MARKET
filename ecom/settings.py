@@ -15,8 +15,8 @@ SECRET_KEY = 'django-insecure-x4m$gfeda-r+)u05g*bzm%8#_vz&8-wl^3epo45gqi#_eqwvtq
 
 DEBUG = True
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '5c7448a1b94525'
-EMAIL_HOST_PASSWORD = 'bc4bd37c84e896'
+EMAIL_HOST_USER = 'e5c70069b3334e'
+EMAIL_HOST_PASSWORD = 'fd7e77b4901363'
 EMAIL_PORT = '2525'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
