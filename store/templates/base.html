@@ -20,6 +20,7 @@
     </head>
     <body>
         {% include 'navbar.html' %}
+        
         {% if messages %}
             {% for message in messages %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -33,7 +34,7 @@
         {% endblock %}
 
 
-
+  
 
         <!-- Footer-->
         <footer class="footer">
@@ -45,15 +46,9 @@
                     <div class="col-6">
                       <!-- list -->
                       <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Vegetables &amp; Fruits</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link"> Breakfast &amp; instant food</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link"> Bakery &amp; Biscuits</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Atta, rice &amp; dal</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Sauces &amp; spreads</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Organic &amp; gourmet</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link"> Baby care</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Cleaning essentials</a></li>
-                        <li class="nav-item mb-2"><a href="#!" class="nav-link">Personal care</a></li>
+                        {% for category in categories %}
+                        <li><a class="dropdown-item" href="{% url 'category' 'Marketing-Books' %}">{{ category.name }}</a></li>
+                        {% endfor %}
                       </ul>
                     </div>
                     <div class="col-6">

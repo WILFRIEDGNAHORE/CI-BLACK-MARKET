@@ -209,3 +209,10 @@ def register_user(request):
 			return redirect('register')
 	else:
 		return render(request, 'register.html', {'form':form})
+
+
+def who(request):
+	return render(request, 'who_are_we.html', {})
+
+def politic(request):
+	return render(request, 'politique.html', {})

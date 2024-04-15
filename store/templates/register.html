@@ -22,7 +22,9 @@
     
     {{ form.as_p }}
     <br/><br/>
-    <div class="col-12 d-grid"><button type="submit" class="btn btn-primary">Register</button></div>
+    <div class="col-12 d-grid"><button type="submit" class="btn btn-primary">Register</button>
+        <a href="{% url 'login' %}" class="btn btn-light">Back</a>
+    </div>
   
 </form>
 

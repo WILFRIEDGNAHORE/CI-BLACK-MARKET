@@ -7,61 +7,20 @@
 // Use this file to add JavaScript to your project
 
 // cookies.js
-document.addEventListener('DOMContentLoaded', function() {
-    const acceptButton = document.getElementById('accept-cookies');
-    const rejectButton = document.getElementById('reject-cookies');
-    
-    acceptButton.addEventListener('click', function() {
-        updateCookiePreferences(true);
+document.addEventListener("DOMContentLoaded", function(){
+    var cookieBanner = document.getElementById("cokieBanner");
+    var acceptButton = document.getElementById("acceptButton");
+    var rejectButton = document.getElementById("rejectButton");
+
+    acceptButton.addEventListener('click',function(){
+        cookieBanner.style.display = 'none';
     });
 
-    rejectButton.addEventListener('click', function() {
-        updateCookiePreferences(false);
+    rejectButtonButton.addEventListener('click',function(){
+        cookieBanner.style.display = 'none';
     });
 
-    function updateCookiePreferences(accepted) {
-        const csrftoken = getCookie('csrftoken');
+    cookieBanner.style.display = 'none';
 
-        fetch(window.location.href, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrftoken,
-            },
-            body: JSON.stringify({ accepted: accepted }),
-            credentials: 'same-origin',
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                // Rediriger ou masquer la bannière de cookies
-                window.location.reload(); // Recharger la page
-            } else {
-                console.error('Erreur lors de la mise à jour des préférences de cookies');
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors de la mise à jour des préférences de cookies:', error);
-        });
-    }
 
-    function getCookie(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                if (cookie.startsWith(name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-});
+})
